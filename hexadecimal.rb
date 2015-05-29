@@ -17,9 +17,6 @@ class Hexadecimal
 
     until counter >= @length_of_hex
       num_to_convert = @hex[place]
-      p num_to_convert
-      p @hex_to_dec[num_to_convert]
-      # p @hex[-1]
       result = 16**counter * @hex_to_dec[num_to_convert]
       counter += 1 
       place -= 1
