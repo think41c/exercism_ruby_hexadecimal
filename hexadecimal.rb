@@ -10,14 +10,19 @@ class Hexadecimal
                     "D" => 13,"E" => 14,"F" => 15 
                   }
   end
+# af
+# 15 x 16^0
+# 10 x 16^1
 
   def to_decimal
     counter = 0 
     place   = -1
+    result  = 0 
 
     until counter >= @length_of_hex
       num_to_convert = @hex[place]
-      result = 16**counter * @hex_to_dec[num_to_convert]
+      digit = 16**counter * @hex_to_dec[num_to_convert]
+      result += digit
       counter += 1 
       place -= 1
     end
@@ -26,5 +31,5 @@ class Hexadecimal
 
 end
 
-a = Hexadecimal.new('10').to_decimal
+a = Hexadecimal.new('af').to_decimal
 p a
