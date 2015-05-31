@@ -10,14 +10,16 @@ class Hexadecimal
                     "D" => 13,"E" => 14,"F" => 15 
                   }
   end
-# af
-# 15 x 16^0
-# 10 x 16^1
 
   def to_decimal
     counter = 0 
     place   = -1
     result  = 0 
+    
+    if valid_hex_test == false then return 0 end
+
+
+
 
     until counter >= @length_of_hex
       num_to_convert = @hex[place]
@@ -29,7 +31,17 @@ class Hexadecimal
     result
   end
 
+  private 
+  
+  def valid_hex_test
+    @hex.chars.each do |x|
+      if !@hex_to_dec.has_key?(x)
+        return false
+      end
+    end
+
+  end
+
 end
 
-a = Hexadecimal.new('af').to_decimal
-p a
+p Hexadecimal.new('c').to_decimal
