@@ -16,10 +16,7 @@ class Hexadecimal
     place   = -1
     result  = 0 
     
-    if valid_hex_test == false then return 0 end
-
-
-
+    if valid_hex_test? == false then return 0 end
 
     until counter >= @length_of_hex
       num_to_convert = @hex[place]
@@ -33,15 +30,11 @@ class Hexadecimal
 
   private 
   
-  def valid_hex_test
+  def valid_hex_test?
     @hex.chars.each do |x|
       if !@hex_to_dec.has_key?(x)
         return false
       end
     end
-
   end
-
 end
-
-p Hexadecimal.new('c').to_decimal
