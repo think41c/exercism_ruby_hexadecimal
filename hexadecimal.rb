@@ -16,7 +16,7 @@ class Hexadecimal
     place   = -1
     result  = 0 
     
-    if valid_hex_test? == false then return 0 end
+    return 0 if valid_hex_test? == false 
 
     until counter >= @length_of_hex
       num_to_convert = @hex[place]
